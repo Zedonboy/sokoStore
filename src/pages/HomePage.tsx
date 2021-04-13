@@ -4,8 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import ProductItem from "../components/ProductItem";
 import { insertToBag } from "../store/slices/bag.slice";
-import { insertHeaderNode } from "../store/slices/header.slice";
-import { clearAllSideNav, insertSideNavNode, removeSideNavNode } from "../store/slices/sideNav.slice";
+import { clearAllSideNav, insertSideNavNode } from "../store/slices/sideNav.slice";
 import { BagItem } from "../types";
 import BagPage from "./BagSection";
 
@@ -44,6 +43,7 @@ export default function HomePage() {
     return () => {
       dispatch(clearAllSideNav(null))
     }
+    //eslint-disable-next-line
   }, []);
   //@ts-ignore
   let bagLength = useSelector((state) => state.bag.value.length);
@@ -56,7 +56,7 @@ export default function HomePage() {
       <div className="flex justify-center px-4 -mt-5">
         <input
           className="p-2 rounded-l bg-gray-200 w-full md:w-1/3"
-          placeholder="Love"
+          placeholder="Search"
         />
         <button className="p-1 w-12 bg-yellow-300 rounded-r">
           <i className="fas fa-search text-blue-700"></i>
@@ -87,12 +87,12 @@ export default function HomePage() {
                 );
             })()}
           </ul>
-          <a
-            href="javascript:void();"
+          
+          <button
             className="font-semibold text-blue-500 hover:underline"
           >
             View all Categories &gt;
-          </a>
+          </button>
         </section>
         <section
           style={{

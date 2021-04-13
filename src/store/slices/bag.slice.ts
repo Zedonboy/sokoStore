@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { StoreState } from "../../types";
 
 const bagSlice = createSlice({
     name : "bag",

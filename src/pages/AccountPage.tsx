@@ -71,6 +71,7 @@ export default function AccountPage() {
       dispatch(clearAllSideNav(null))
       dispatch(clearHeaderNode(null))
     }
+    //eslint-disable-next-line
   }, []);
   let { path } = useRouteMatch();
   return (

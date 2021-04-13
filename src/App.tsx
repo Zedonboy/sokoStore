@@ -53,6 +53,7 @@ function App() {
     };
 
     seed();
+    //eslint-disable-next-line
   }, []);
   //@ts-ignore
   let nodes = useSelector((state) => state.header.nodes);
